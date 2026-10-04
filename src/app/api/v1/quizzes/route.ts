@@ -39,3 +39,11 @@ export const POST = createHandler(async (req: NextRequest) => {
 
   return successResponse(result, 201);
 });
+
+export const GET = createHandler(async () => {
+  return successResponse({
+    endpoint: "/api/v1/quizzes",
+    message: "Use POST /api/v1/quizzes to create a new quiz room",
+  });
+});
+
