@@ -8,12 +8,14 @@ export interface RankingTableProps {
   rows: HostDashboardRowDto[];
   isFinal: boolean;
   totalQuestions?: number;
+  onRemove?: (participant: { id: string; name: string }) => void;
 }
 
 export function RankingTable({
   rows,
   isFinal,
   totalQuestions = 25,
+  onRemove,
 }: RankingTableProps) {
   return (
     <div className="w-full glass-card rounded-2xl border border-navy-700/80 overflow-hidden shadow-xl">
@@ -50,6 +52,7 @@ export function RankingTable({
                   <th className="py-3 px-4 text-center">Answered</th>
                   <th className="py-3 px-4 text-center">Score</th>
                   <th className="py-3 px-4 text-right">Time Taken</th>
+                  {onRemove && <th className="py-3 px-4 text-right">Action</th>}
                 </tr>
               </thead>
               <tbody className="divide-y divide-navy-800/60">
@@ -88,6 +91,17 @@ export function RankingTable({
                     <td className="py-3.5 px-4 text-right font-mono text-xs text-slate-400">
                       {row.timeTakenMs !== null ? formatTimeTaken(row.timeTakenMs) : "—"}
                     </td>
+                    {onRemove && (
+                      <td className="py-3.5 px-4 text-right">
+                        <button
+                          type="button"
+                          onClick={() => onRemove({ id: row.participantId, name: row.name })}
+                          className="px-2 py-0.5 rounded text-xs font-semibold text-red-400 border border-red-500/30 hover:bg-red-950/60 transition"
+                        >
+                          Remove
+                        </button>
+                      </td>
+                    )}
                   </tr>
                 ))}
               </tbody>
@@ -110,19 +124,26 @@ export function RankingTable({
                   </div>
                 </div>
 
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end gap-1">
                   <span className="font-mono text-lg font-black text-white">
                     {row.score !== null ? `${row.score} pts` : "—"}
                   </span>
-                  <span className="text-[10px] uppercase font-bold text-slate-400">
-                    {row.status === "SUBMITTED" ? "Submitted" : row.status === "AUTO_SUBMITTED" ? "Auto" : "Active"}
-                  </span>
+                  {onRemove && (
+                    <button
+                      type="button"
+                      onClick={() => onRemove({ id: row.participantId, name: row.name })}
+                      className="px-2 py-0.5 rounded text-[10px] font-semibold text-red-400 border border-red-500/30 hover:bg-red-950/60 transition"
+                    >
+                      Remove
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </>
       )}
+
     </div>
   );
 }

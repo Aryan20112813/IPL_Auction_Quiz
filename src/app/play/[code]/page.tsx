@@ -15,6 +15,7 @@ import {
   KeyRound,
   AlertCircle,
   HelpCircle,
+  UserX,
 } from "lucide-react";
 import { TopBar } from "@/components/layout/TopBar";
 import { Footer } from "@/components/layout/Footer";
@@ -87,7 +88,9 @@ export default function PlayQuizPage() {
       if (data.endsAt) setEndsAt(data.endsAt);
       return data;
     } catch (err: any) {
-      console.warn("fetchMe error:", err);
+      if (err.message?.includes("removed") || err.code === "FORBIDDEN") {
+        setMeData((prev) => prev ? { ...prev, status: "REMOVED" } : null);
+      }
       return null;
     }
   }, [participantToken, roomCode]);
@@ -104,7 +107,9 @@ export default function PlayQuizPage() {
       setEndsAt(data.endsAt);
       return data;
     } catch (err: any) {
-      console.warn("fetchQuestions error:", err);
+      if (err.message?.includes("removed") || err.code === "FORBIDDEN") {
+        setMeData((prev) => prev ? { ...prev, status: "REMOVED" } : null);
+      }
       return null;
     }
   }, [participantToken, roomCode]);
@@ -168,7 +173,7 @@ export default function PlayQuizPage() {
           await fetchLeaderboard();
         }
       }
-    }, meData?.status === "SUBMITTED" ? 15000 : 8000);
+    }, meData?.status === "SUBMITTED" ? 15000 : 4000);
 
     return () => clearInterval(interval);
   }, [participantToken, roomCode, meData?.status, questions.length, fetchMe, fetchQuestions, fetchLeaderboard]);
@@ -240,6 +245,33 @@ export default function PlayQuizPage() {
       </div>
     );
   }
+
+  // REMOVED STATE (Kicked by Host)
+  if (meData.status === "REMOVED") {
+    return (
+      <div className="flex-1 flex flex-col justify-between">
+        <TopBar roomCode={roomCode} />
+        <main className="max-w-md mx-auto w-full px-4 py-12 flex-1 flex flex-col justify-center text-center">
+          <Card variant="glass" className="p-8 border-red-500/40 shadow-2xl flex flex-col items-center gap-4">
+            <div className="w-16 h-16 rounded-3xl bg-red-950/80 border border-red-500/40 flex items-center justify-center text-red-400 shadow-xl">
+              <UserX className="w-8 h-8" />
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black text-white">Removed from Quiz</h2>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              You have been removed from this quiz by the host and can no longer participate in this session.
+            </p>
+            <Link href="/" className="w-full mt-2">
+              <Button variant="secondary" size="md" className="w-full">
+                Return to Home
+              </Button>
+            </Link>
+          </Card>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
 
   const isWaiting = meData.state === "WAITING";
   const isActive = meData.state === "ACTIVE";

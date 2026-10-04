@@ -9,6 +9,7 @@ import {
   NameTakenError,
   QuizFullError,
   UnauthorizedError,
+  ForbiddenError,
 } from "../http/errors";
 
 export async function joinQuiz(roomCode: string, displayName: string) {
@@ -38,7 +39,7 @@ export async function joinQuiz(roomCode: string, displayName: string) {
   });
 
   if (existing) {
-    throw new NameTakenError();
+    throw new NameTakenError("This team name is already taken in this quiz. Please choose another name.");
   }
 
   // Check participant cap
@@ -76,7 +77,7 @@ export async function joinQuiz(roomCode: string, displayName: string) {
     };
   } catch (err: any) {
     if (err.code === "P2002") {
-      throw new NameTakenError();
+      throw new NameTakenError("This team name is already taken in this quiz. Please choose another name.");
     }
     throw err;
   }
@@ -110,6 +111,10 @@ export async function rejoinQuiz(
     throw new UnauthorizedError("Invalid display name or recovery code");
   }
 
+  if (participant.status === "REMOVED") {
+    throw new ForbiddenError("You have been removed from this quiz by the host");
+  }
+
   const suppliedRecoveryHash = hashToken(recoveryCode.toUpperCase());
   if (!timingSafeMatch(participant.recoveryCodeHash, suppliedRecoveryHash)) {
     throw new UnauthorizedError("Invalid recovery code");
@@ -134,6 +139,24 @@ export async function rejoinQuiz(
     state: effectiveState,
   };
 }
+
+export async function removeParticipant(quizId: string, participantId: string) {
+  const participant = await prisma.participant.findFirst({
+    where: { id: participantId, quizId },
+  });
+
+  if (!participant) {
+    throw new NotFoundError("Participant not found");
+  }
+
+  await prisma.participant.update({
+    where: { id: participantId },
+    data: { status: "REMOVED" },
+  });
+
+  return { success: true, participantId };
+}
+
 
 export async function getMe(participantId: string) {
   const participant = await prisma.participant.findUnique({

@@ -37,10 +37,11 @@ export class NotFoundError extends AppError {
 }
 
 export class NameTakenError extends AppError {
-  constructor(message: string = "This name is already taken in this quiz. If this is you, use your recovery code to rejoin.") {
+  constructor(message: string = "This team name is already taken in this quiz. Please choose another name.") {
     super(ErrorCode.NAME_TAKEN, message, 409);
   }
 }
+
 
 export class QuizFullError extends AppError {
   constructor(message: string = "Quiz has reached the maximum number of participants") {

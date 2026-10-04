@@ -24,9 +24,14 @@ export async function requireParticipant(req: NextRequest, roomCode: string) {
     throw new UnauthorizedError("Invalid participant session");
   }
 
+  if (participant.status === "REMOVED") {
+    throw new ForbiddenError("You have been removed from this quiz by the host");
+  }
+
   if (participant.quiz.code.toUpperCase() !== roomCode.toUpperCase()) {
     throw new ForbiddenError("Participant does not belong to this quiz room");
   }
+
 
   return { participant, quiz: participant.quiz };
 }

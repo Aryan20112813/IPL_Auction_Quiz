@@ -213,7 +213,7 @@ export async function getHostDashboard(
 
   // Participant counts
   const [joined, inProgress, submitted, autoSubmitted] = await Promise.all([
-    prisma.participant.count({ where: { quizId } }),
+    prisma.participant.count({ where: { quizId, status: { not: "REMOVED" } } }),
     prisma.participant.count({ where: { quizId, status: "IN_PROGRESS" } }),
     prisma.participant.count({ where: { quizId, status: "SUBMITTED" } }),
     prisma.participant.count({ where: { quizId, status: "AUTO_SUBMITTED" } }),
@@ -221,12 +221,13 @@ export async function getHostDashboard(
 
   // Fetch participants with their results and answers
   const participants = await prisma.participant.findMany({
-    where: { quizId },
+    where: { quizId, status: { not: "REMOVED" } },
     include: {
       result: true,
       answers: true,
     },
   });
+
 
   let mappedRows;
 

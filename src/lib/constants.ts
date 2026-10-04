@@ -12,6 +12,7 @@ export const ParticipantStatus = {
   IN_PROGRESS: "IN_PROGRESS",
   SUBMITTED: "SUBMITTED",
   AUTO_SUBMITTED: "AUTO_SUBMITTED",
+  REMOVED: "REMOVED",
 } as const;
 
 export type ParticipantStatusType = (typeof ParticipantStatus)[keyof typeof ParticipantStatus];
@@ -37,6 +38,8 @@ export const ErrorCode = {
   RATE_LIMITED: "RATE_LIMITED",
   INTERNAL: "INTERNAL",
   QUESTION_BANK_INSUFFICIENT: "QUESTION_BANK_INSUFFICIENT",
+  PARTICIPANT_REMOVED: "PARTICIPANT_REMOVED",
 } as const;
+
 
 export type ErrorCodeType = (typeof ErrorCode)[keyof typeof ErrorCode];

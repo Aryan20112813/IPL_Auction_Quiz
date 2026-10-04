@@ -1,12 +1,14 @@
 import React from "react";
-import { Users, User } from "lucide-react";
+import { Users, X } from "lucide-react";
 
 export function ParticipantList({
   participants,
   count,
+  onRemove,
 }: {
   participants: Array<{ id: string; displayName: string }>;
   count: number;
+  onRemove?: (participant: { id: string; displayName: string }) => void;
 }) {
   return (
     <div className="w-full glass-card rounded-2xl p-5 border border-navy-700/80">
@@ -31,6 +33,17 @@ export function ParticipantList({
             >
               <div className="w-2 h-2 rounded-full bg-emerald-400" />
               <span>{p.displayName}</span>
+              {onRemove && (
+                <button
+                  type="button"
+                  onClick={() => onRemove(p)}
+                  title={`Remove ${p.displayName}`}
+                  className="ml-1 p-0.5 rounded text-slate-400 hover:text-red-400 hover:bg-red-950/40 transition"
+                  aria-label={`Remove ${p.displayName}`}
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
             </div>
           ))}
         </div>
@@ -38,3 +51,4 @@ export function ParticipantList({
     </div>
   );
 }
+

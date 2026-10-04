@@ -14,6 +14,7 @@ import { ParticipantList } from "@/components/host/ParticipantList";
 import { DashboardCounts } from "@/components/host/DashboardCounts";
 import { RankingTable } from "@/components/host/RankingTable";
 import { EndQuizDialog } from "@/components/host/EndQuizDialog";
+import { RemoveParticipantDialog } from "@/components/host/RemoveParticipantDialog";
 import { TimerDisplay } from "@/components/quiz/TimerDisplay";
 import { Pagination } from "@/components/leaderboard/Pagination";
 import { useSession } from "@/hooks/useSession";
@@ -42,8 +43,10 @@ export default function HostQuizPage() {
 
   const [isQrOpen, setIsQrOpen] = useState(false);
   const [isEndDialogOpen, setIsEndDialogOpen] = useState(false);
+  const [participantToRemove, setParticipantToRemove] = useState<{ id: string; name: string } | null>(null);
   const [isStarting, setIsStarting] = useState(false);
   const [isEnding, setIsEnding] = useState(false);
+  const [isRemoving, setIsRemoving] = useState(false);
   const [actionError, setActionError] = useState<string | null>(null);
 
   if (!sessionLoaded || statusLoading) {
@@ -109,6 +112,26 @@ export default function HostQuizPage() {
       setActionError(err.message || "Failed to end quiz.");
     } finally {
       setIsEnding(false);
+    }
+  };
+
+  // Host Remove Participant
+  const handleRemoveParticipant = async () => {
+    if (!hostToken || !participantToRemove) return;
+    setIsRemoving(true);
+    setActionError(null);
+    try {
+      await apiFetch(`/api/v1/quizzes/${roomCode}/host/participants/${participantToRemove.id}`, {
+        method: "DELETE",
+        token: hostToken,
+      });
+      setParticipantToRemove(null);
+      await refreshStatus();
+      await refreshDashboard();
+    } catch (err: any) {
+      setActionError(err.message || "Failed to remove participant.");
+    } finally {
+      setIsRemoving(false);
     }
   };
 
@@ -229,6 +252,7 @@ export default function HostQuizPage() {
                 displayName: r.name,
               }))}
               count={status.participantCount}
+              onRemove={(p) => setParticipantToRemove({ id: p.id, name: p.displayName })}
             />
           </div>
         )}
@@ -247,6 +271,7 @@ export default function HostQuizPage() {
                 <RankingTable
                   rows={dashboardData.rows}
                   isFinal={dashboardData.isFinal}
+                  onRemove={!dashboardData.isFinal ? (p) => setParticipantToRemove(p) : undefined}
                 />
                 <Pagination
                   limit={limit}
@@ -275,7 +300,17 @@ export default function HostQuizPage() {
         isEnding={isEnding}
       />
 
+      {/* Remove Participant Confirmation Dialog */}
+      <RemoveParticipantDialog
+        isOpen={!!participantToRemove}
+        participantName={participantToRemove?.name || null}
+        onClose={() => setParticipantToRemove(null)}
+        onConfirm={handleRemoveParticipant}
+        isRemoving={isRemoving}
+      />
+
       <Footer />
     </div>
   );
 }
+
