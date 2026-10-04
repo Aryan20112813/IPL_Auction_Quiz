@@ -15,7 +15,7 @@ import {
   InvalidStateError,
 } from "../http/errors";
 
-export async function createQuiz(title?: string) {
+export async function createQuiz(title?: string, durationSeconds: number = CONFIG.QUIZ_DURATION_SECONDS) {
   // 1. Fetch all active question IDs
   const activeQuestions = await prisma.question.findMany({
     where: { isActive: true },
@@ -49,7 +49,7 @@ export async function createQuiz(title?: string) {
             state: QuizState.WAITING,
             hostTokenHash,
             questionCount: CONFIG.QUESTION_COUNT,
-            durationSeconds: CONFIG.QUIZ_DURATION_SECONDS,
+            durationSeconds,
           },
         });
 

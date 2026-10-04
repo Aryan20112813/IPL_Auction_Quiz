@@ -4,8 +4,9 @@
   "private": true,
   "description": "Fast, mobile-first multiplayer IPL quiz for IPL auction events with server-authoritative scoring and live leaderboards",
   "scripts": {
+    "postinstall": "prisma generate",
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",

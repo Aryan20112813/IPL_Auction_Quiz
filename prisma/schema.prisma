@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED") // Used for migrations (bypasses PgBouncer)
 }
 
 model Question {
@@ -97,6 +98,6 @@ model Result {
   participant     Participant @relation(fields: [participantId], references: [id], onDelete: Cascade)
   quiz            Quiz        @relation(fields: [quizId], references: [id], onDelete: Cascade)
 
-  @@index([quizId, score, timeTakenMs])
+  @@index([quizId, score(sort: Desc), timeTakenMs(sort: Asc)])
   @@map("results")
 }
