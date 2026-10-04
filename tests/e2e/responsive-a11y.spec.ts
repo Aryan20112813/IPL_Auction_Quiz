@@ -47,7 +47,8 @@ test.describe("Responsive & Accessibility", () => {
     await expect(focused).toBeVisible();
   });
 
-  test.skip(!AxeBuilder, "axe-core not installed")("landing page passes axe", async ({ page }) => {
+  test("landing page passes axe", async ({ page }) => {
+    test.skip(!AxeBuilder, "axe-core not installed");
     await page.goto("/");
     if (AxeBuilder) {
       const results = await new AxeBuilder({ page }).analyze();
@@ -55,7 +56,8 @@ test.describe("Responsive & Accessibility", () => {
     }
   });
 
-  test.skip(!AxeBuilder, "axe-core not installed")("join page passes axe", async ({ page }) => {
+  test("join page passes axe", async ({ page }) => {
+    test.skip(!AxeBuilder, "axe-core not installed");
     await page.goto("/join");
     if (AxeBuilder) {
       const results = await new AxeBuilder({ page }).analyze();

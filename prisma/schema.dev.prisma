@@ -2,14 +2,9 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// ──────────────────────────────────────────────────────────────
-// DATABASE PROVIDER
-// For LOCAL development:  DATABASE_URL="file:./dev.db"  (SQLite)
-// For PRODUCTION (Vercel): Set DATABASE_URL to a PostgreSQL URL
-//   and change provider to "postgresql"
-// ──────────────────────────────────────────────────────────────
+// LOCAL DEVELOPMENT — SQLite, zero-config
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -103,6 +98,6 @@ model Result {
   participant     Participant @relation(fields: [participantId], references: [id], onDelete: Cascade)
   quiz            Quiz        @relation(fields: [quizId], references: [id], onDelete: Cascade)
 
-  @@index([quizId, score(sort: Desc), timeTakenMs(sort: Asc)])
+  @@index([quizId, score, timeTakenMs])
   @@map("results")
 }

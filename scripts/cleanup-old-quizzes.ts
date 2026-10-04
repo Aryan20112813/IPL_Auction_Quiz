@@ -36,15 +36,15 @@ async function main() {
   const candidates = await prisma.quiz.findMany({
     where: {
       state: { in: ["ENDED", "EXPIRED"] },
-      ended_at: { lt: cutoff },
+      endedAt: { lt: cutoff },
     },
-    select: { id: true, code: true, ended_at: true, state: true },
+    select: { id: true, code: true, endedAt: true, state: true },
   });
 
   console.log(`Found ${candidates.length} quiz(zes) to delete.`);
   for (const q of candidates) {
     console.log(
-      `  • ${q.code}  state=${q.state}  ended_at=${q.ended_at?.toISOString() ?? "null"}`
+      `  • ${q.code}  state=${q.state}  ended_at=${q.endedAt?.toISOString() ?? "null"}`
     );
   }
 

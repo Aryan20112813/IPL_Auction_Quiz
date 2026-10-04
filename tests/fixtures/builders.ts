@@ -6,20 +6,20 @@
  */
 
 import type {
-  QuizState,
-  ParticipantStatus,
-} from "@prisma/client";
+  QuizStateType,
+  ParticipantStatusType,
+} from "@/lib/constants";
 
 /** Build a minimal Quiz input object. */
 export function buildQuiz(overrides: {
-  state?: QuizState;
+  state?: QuizStateType;
   code?: string;
   questionCount?: number;
 } = {}) {
   return {
     code: overrides.code ?? "TESTAA",
     host_token_hash: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-    state: overrides.state ?? ("WAITING" as QuizState),
+    state: overrides.state ?? ("WAITING" as QuizStateType),
     question_count: overrides.questionCount ?? 25,
     duration_seconds: 7200,
     max_participants: 300,
@@ -34,14 +34,14 @@ export function buildParticipant(overrides: {
   quizId?: string;
   displayName?: string;
   normalizedName?: string;
-  status?: ParticipantStatus;
+  status?: ParticipantStatusType;
 } = {}) {
   return {
     quiz_id: overrides.quizId ?? "quiz-id-placeholder",
     display_name: overrides.displayName ?? "TestPlayer",
     normalized_name: overrides.normalizedName ?? "testplayer",
     token_hash: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-    status: overrides.status ?? ("IN_PROGRESS" as ParticipantStatus),
+    status: overrides.status ?? ("IN_PROGRESS" as ParticipantStatusType),
     score: null,
     rank: null,
     time_taken_ms: null,
