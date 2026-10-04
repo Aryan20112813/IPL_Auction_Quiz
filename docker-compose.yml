@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: quiz
+      POSTGRES_PASSWORD: quiz_dev_password
+      POSTGRES_DB: quiz_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U quiz -d quiz_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Optional: run the app itself via Docker
+  # app:
+  #   build: .
+  #   restart: unless-stopped
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #   environment:
+  #     DATABASE_URL: postgresql://quiz:quiz_dev_password@postgres:5432/quiz_db
+  #     APP_URL: http://localhost:3000
+  #     TOKEN_PEPPER: changeme-in-production
+  #     MAX_PARTICIPANTS: "300"
+  #     QUIZ_DURATION_SECONDS: "7200"
+  #     QUESTION_COUNT: "25"
+  #   ports:
+  #     - "3000:3000"
+
+volumes:
+  postgres_data:

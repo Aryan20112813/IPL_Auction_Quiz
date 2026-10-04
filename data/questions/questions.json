@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "Q001",
+    "text": "In which year was the first season of the IPL played?",
+    "options": {
+      "A": "2005",
+      "B": "2007",
+      "C": "2010",
+      "D": "2008"
+    },
+    "correctOption": "D",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q002",
+    "text": "Which franchise won the inaugural IPL season in 2008?",
+    "options": {
+      "A": "Rajasthan Royals",
+      "B": "Mumbai Indians",
+      "C": "Chennai Super Kings",
+      "D": "Deccan Chargers"
+    },
+    "correctOption": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q003",
+    "text": "How many overs does each team get to bat in a standard IPL match?",
+    "options": {
+      "A": "25",
+      "B": "15",
+      "C": "10",
+      "D": "20"
+    },
+    "correctOption": "D",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q004",
+    "text": "Which coloured cap is awarded to the leading run-scorer of an IPL season?",
+    "options": {
+      "A": "Green Cap",
+      "B": "Orange Cap",
+      "C": "Blue Cap",
+      "D": "Purple Cap"
+    },
+    "correctOption": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q005",
+    "text": "Which coloured cap is awarded to the leading wicket-taker of an IPL season?",
+    "options": {
+      "A": "Purple Cap",
+      "B": "Red Cap",
+      "C": "Yellow Cap",
+      "D": "Orange Cap"
+    },
+    "correctOption": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q006",
+    "text": "Which cricket board organises the IPL?",
+    "options": {
+      "A": "Cricket Australia",
+      "B": "BCCI",
+      "C": "ICC",
+      "D": "ECB"
+    },
+    "correctOption": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q007",
+    "text": "What is the maximum number of overs a single bowler can bowl in an IPL innings?",
+    "options": {
+      "A": "4",
+      "B": "6",
+      "C": "3",
+      "D": "5"
+    },
+    "correctOption": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q008",
+    "text": "How many overs does the Powerplay last in an IPL innings?",
+    "options": {
+      "A": "8",
+      "B": "4",
+      "C": "6",
+      "D": "10"
+    },
+    "correctOption": "C",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q009",
+    "text": "What is used to decide an IPL match if the scores are tied after 20 overs each?",
+    "options": {
+      "A": "Coin toss",
+      "B": "Super Over",
+      "C": "Boundary count",
+      "D": "Replay on the next day"
+    },
+    "correctOption": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q010",
+    "text": "How many franchises have competed in each IPL season from 2022 onward?",
+    "options": {
+      "A": "12",
+      "B": "10",
+      "C": "8",
+      "D": "9"
+    },
+    "correctOption": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q011",
+    "text": "Which two new franchises joined the IPL in 2022?",
+    "options": {
+      "A": "Pune Warriors India and Kochi Tuskers Kerala",
+      "B": "Deccan Chargers and Sunrisers Hyderabad",
+      "C": "Rising Pune Supergiant and Gujarat Lions",
+      "D": "Gujarat Titans and Lucknow Super Giants"
+    },
+    "correctOption": "D",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q012",
+    "text": "Which franchise won the IPL title in its debut season in 2022?",
+    "options": {
+      "A": "Punjab Kings",
+      "B": "Gujarat Titans",
+      "C": "Rajasthan Royals",
+      "D": "Lucknow Super Giants"
+    },
+    "correctOption": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q013",
+    "text": "Who captained Gujarat Titans to the 2022 IPL title?",
+    "options": {
+      "A": "David Miller",
+      "B": "Hardik Pandya",
+      "C": "Shubman Gill",
+      "D": "Rashid Khan"
+    },
+    "correctOption": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q014",
+    "text": "Which franchise won the IPL 2025 title?",
+    "options": {
+      "A": "Mumbai Indians",
+      "B": "Gujarat Titans",
+      "C": "Royal Challengers Bengaluru",
+      "D": "Punjab Kings"
+    },
+    "correctOption": "C",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q015",
+    "text": "Which franchise won the IPL 2024 title?",
+    "options": {
+      "A": "Sunrisers Hyderabad",
+      "B": "Royal Challengers Bengaluru",
+      "C": "Kolkata Knight Riders",
+      "D": "Rajasthan Royals"
+    },
+    "correctOption": "C",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q016",
+    "text": "Who captained Kolkata Knight Riders to the IPL 2024 title?",
+    "options": {
+      "A": "Shreyas Iyer",
+      "B": "Nitish Rana",
+      "C": "Andre Russell",
+      "D": "Rinku Singh"
+    },
+    "correctOption": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q017",
+    "text": "Which wicketkeeper-batter captained Chennai Super Kings to the titles of 2010, 2011, 2018, 2021 and 2023?",
+    "options": {
+      "A": "Ravindra Jadeja",
+      "B": "Ruturaj Gaikwad",
+      "C": "Suresh Raina",
+      "D": "MS Dhoni"
+    },
+    "correctOption": "D",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q018",
+    "text": "Which captain led Mumbai Indians to five IPL titles?",
+    "options": {
+      "A": "Ricky Ponting",
+      "B": "Hardik Pandya",
+      "C": "Rohit Sharma",
+      "D": "MS Dhoni"
+    },
+    "correctOption": "C",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q019",
+    "text": "Through the 2025 season, which two franchises have won five IPL titles each?",
+    "options": {
+      "A": "Chennai Super Kings and Kolkata Knight Riders",
+      "B": "Royal Challengers Bengaluru and Mumbai Indians",
+      "C": "Mumbai Indians and Chennai Super Kings",
+      "D": "Mumbai Indians and Kolkata Knight Riders"
+    },
+    "correctOption": "C",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q020",
+    "text": "Which batter scored a record 973 runs in a single IPL season in 2016?",
+    "options": {
+      "A": "David Warner",
+      "B": "Jos Buttler",
+      "C": "Virat Kohli",
+      "D": "Shubman Gill"
+    },
+    "correctOption": "C",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q021",
+    "text": "Which batter is nicknamed the 'Universe Boss'?",
+    "options": {
+      "A": "Chris Gayle",
+      "B": "AB de Villiers",
+      "C": "Andre Russell",
+      "D": "Kieron Pollard"
+    },
+    "correctOption": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q022",
+    "text": "Eden Gardens is the home ground of which IPL franchise?",
+    "options": {
+      "A": "Kolkata Knight Riders",
+      "B": "Sunrisers Hyderabad",
+      "C": "Rajasthan Royals",
+      "D": "Delhi Capitals"
+    },
+    "correctOption": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q023",
+    "text": "Wankhede Stadium is the home ground of which IPL franchise?",
+    "options": {
+      "A": "Chennai Super Kings",
+      "B": "Punjab Kings",
+      "C": "Royal Challengers Bengaluru",
+      "D": "Mumbai Indians"
+    },
+    "correctOption": "D",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q024",
+    "text": "MA Chidambaram Stadium (Chepauk) is the home ground of which IPL franchise?",
+    "options": {
+      "A": "Chennai Super Kings",
+      "B": "Mumbai Indians",
+      "C": "Kolkata Knight Riders",
+      "D": "Sunrisers Hyderabad"
+    },
+    "correctOption": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q025",
+    "text": "M. Chinnaswamy Stadium is the home ground of which IPL franchise?",
+    "options": {
+      "A": "Royal Challengers Bengaluru",
+      "B": "Delhi Capitals",
+      "C": "Lucknow Super Giants",
+      "D": "Rajasthan Royals"
+    },
+    "correctOption": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q026",
+    "text": "Narendra Modi Stadium in Ahmedabad has been the home ground of which franchise since 2022?",
+    "options": {
+      "A": "Mumbai Indians",
+      "B": "Gujarat Titans",
+      "C": "Rajasthan Royals",
+      "D": "Kolkata Knight Riders"
+    },
+    "correctOption": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q027",
+    "text": "Which actor is a co-owner of Kolkata Knight Riders?",
+    "options": {
+      "A": "Salman Khan",
+      "B": "Aamir Khan",
+      "C": "Akshay Kumar",
+      "D": "Shah Rukh Khan"
+    },
+    "correctOption": "D",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q028",
+    "text": "Which actress is a co-owner of Punjab Kings?",
+    "options": {
+      "A": "Preity Zinta",
+      "B": "Juhi Chawla",
+      "C": "Shilpa Shetty",
+      "D": "Deepika Padukone"
+    },
+    "correctOption": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q029",
+    "text": "Jasprit Bumrah has played his entire IPL career for which franchise?",
+    "options": {
+      "A": "Mumbai Indians",
+      "B": "Chennai Super Kings",
+      "C": "Gujarat Titans",
+      "D": "Kolkata Knight Riders"
+    },
+    "correctOption": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q030",
+    "text": "Who captained Rajasthan Royals to the inaugural IPL title in 2008?",
+    "options": {
+      "A": "Sanju Samson",
+      "B": "Rahul Dravid",
+      "C": "Shane Warne",
+      "D": "Shane Watson"
+    },
+    "correctOption": "C",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "Q031",
+    "text": "Which country hosted the entire IPL 2009 season?",
+    "options": {
+      "A": "United Arab Emirates",
+      "B": "England",
+      "C": "Sri Lanka",
+      "D": "South Africa"
+    },
+    "correctOption": "D",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q032",
+    "text": "In which country were all matches of IPL 2020 played?",
+    "options": {
+      "A": "United Arab Emirates",
+      "B": "Qatar",
+      "C": "India",
+      "D": "South Africa"
+    },
+    "correctOption": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q033",
+    "text": "Which franchise, captained by Adam Gilchrist, won the IPL 2009 title?",
+    "options": {
+      "A": "Royal Challengers Bangalore",
+      "B": "Chennai Super Kings",
+      "C": "Deccan Chargers",
+      "D": "Kolkata Knight Riders"
+    },
+    "correctOption": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q034",
+    "text": "Which franchise replaced Deccan Chargers in the IPL from the 2013 season?",
+    "options": {
+      "A": "Gujarat Lions",
+      "B": "Pune Warriors India",
+      "C": "Kochi Tuskers Kerala",
+      "D": "Sunrisers Hyderabad"
+    },
+    "correctOption": "D",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q035",
+    "text": "Which team did Sunrisers Hyderabad beat in the IPL 2016 final?",
+    "options": {
+      "A": "Royal Challengers Bangalore",
+      "B": "Mumbai Indians",
+      "C": "Gujarat Lions",
+      "D": "Kolkata Knight Riders"
+    },
+    "correctOption": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q036",
+    "text": "Who captained Sunrisers Hyderabad to their IPL 2016 title?",
+    "options": {
+      "A": "Bhuvneshwar Kumar",
+      "B": "Kane Williamson",
+      "C": "David Warner",
+      "D": "Shikhar Dhawan"
+    },
+    "correctOption": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q037",
+    "text": "Which two franchises were suspended from the IPL for the 2016 and 2017 seasons?",
+    "options": {
+      "A": "Chennai Super Kings and Rajasthan Royals",
+      "B": "Mumbai Indians and Kolkata Knight Riders",
+      "C": "Royal Challengers Bangalore and Delhi Daredevils",
+      "D": "Kings XI Punjab and Sunrisers Hyderabad"
+    },
+    "correctOption": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q038",
+    "text": "Which franchise won back-to-back IPL titles in 2010 and 2011?",
+    "options": {
+      "A": "Kolkata Knight Riders",
+      "B": "Rajasthan Royals",
+      "C": "Chennai Super Kings",
+      "D": "Mumbai Indians"
+    },
+    "correctOption": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q039",
+    "text": "In the IPL 2019 final, Mumbai Indians beat which team by one run?",
+    "options": {
+      "A": "Chennai Super Kings",
+      "B": "Sunrisers Hyderabad",
+      "C": "Delhi Capitals",
+      "D": "Kolkata Knight Riders"
+    },
+    "correctOption": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q040",
+    "text": "Which CSK all-rounder hit a six and a four off the last two balls to win the IPL 2023 final against Gujarat Titans?",
+    "options": {
+      "A": "Shivam Dube",
+      "B": "Ambati Rayudu",
+      "C": "MS Dhoni",
+      "D": "Ravindra Jadeja"
+    },
+    "correctOption": "D",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q041",
+    "text": "Which team did Chennai Super Kings beat in the IPL 2021 final in Dubai?",
+    "options": {
+      "A": "Royal Challengers Bangalore",
+      "B": "Kolkata Knight Riders",
+      "C": "Mumbai Indians",
+      "D": "Delhi Capitals"
+    },
+    "correctOption": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q042",
+    "text": "Who won the Orange Cap in IPL 2023 with 890 runs?",
+    "options": {
+      "A": "Yashasvi Jaiswal",
+      "B": "Virat Kohli",
+      "C": "Faf du Plessis",
+      "D": "Shubman Gill"
+    },
+    "correctOption": "D",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q043",
+    "text": "Who won the Orange Cap in IPL 2022 with 863 runs?",
+    "options": {
+      "A": "Jos Buttler",
+      "B": "KL Rahul",
+      "C": "Quinton de Kock",
+      "D": "Hardik Pandya"
+    },
+    "correctOption": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q044",
+    "text": "Who won the Orange Cap in IPL 2025?",
+    "options": {
+      "A": "Virat Kohli",
+      "B": "Shubman Gill",
+      "C": "Suryakumar Yadav",
+      "D": "Sai Sudharsan"
+    },
+    "correctOption": "D",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q045",
+    "text": "Who won the Orange Cap in IPL 2020 with 670 runs?",
+    "options": {
+      "A": "David Warner",
+      "B": "KL Rahul",
+      "C": "Shikhar Dhawan",
+      "D": "Ishan Kishan"
+    },
+    "correctOption": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q046",
+    "text": "Who won the Purple Cap in IPL 2023 with 28 wickets?",
+    "options": {
+      "A": "Rashid Khan",
+      "B": "Piyush Chawla",
+      "C": "Mohammed Shami",
+      "D": "Mohit Sharma"
+    },
+    "correctOption": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q047",
+    "text": "Who won the Purple Cap in IPL 2022 with 27 wickets?",
+    "options": {
+      "A": "Yuzvendra Chahal",
+      "B": "Kagiso Rabada",
+      "C": "T Natarajan",
+      "D": "Wanindu Hasaranga"
+    },
+    "correctOption": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q048",
+    "text": "Who won the Purple Cap in IPL 2021 with 32 wickets?",
+    "options": {
+      "A": "Rashid Khan",
+      "B": "Harshal Patel",
+      "C": "Jasprit Bumrah",
+      "D": "Avesh Khan"
+    },
+    "correctOption": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q049",
+    "text": "Who won the Purple Cap in IPL 2020 with 30 wickets?",
+    "options": {
+      "A": "Trent Boult",
+      "B": "Jasprit Bumrah",
+      "C": "Anrich Nortje",
+      "D": "Kagiso Rabada"
+    },
+    "correctOption": "D",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q050",
+    "text": "Through the 2025 season, who has scored the most runs in IPL history?",
+    "options": {
+      "A": "Shikhar Dhawan",
+      "B": "David Warner",
+      "C": "Virat Kohli",
+      "D": "Rohit Sharma"
+    },
+    "correctOption": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q051",
+    "text": "Through the 2025 season, who has taken the most wickets in IPL history?",
+    "options": {
+      "A": "Dwayne Bravo",
+      "B": "Piyush Chawla",
+      "C": "Bhuvneshwar Kumar",
+      "D": "Yuzvendra Chahal"
+    },
+    "correctOption": "D",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q052",
+    "text": "Which team scored the highest total in IPL history, 287/3 against Royal Challengers Bengaluru in 2024?",
+    "options": {
+      "A": "Chennai Super Kings",
+      "B": "Sunrisers Hyderabad",
+      "C": "Kolkata Knight Riders",
+      "D": "Mumbai Indians"
+    },
+    "correctOption": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q053",
+    "text": "Which team recorded the lowest IPL total of 49 all out, against Kolkata Knight Riders in 2017?",
+    "options": {
+      "A": "Royal Challengers Bangalore",
+      "B": "Rajasthan Royals",
+      "C": "Delhi Daredevils",
+      "D": "Kings XI Punjab"
+    },
+    "correctOption": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q054",
+    "text": "Who was the first chairman and commissioner of the IPL?",
+    "options": {
+      "A": "Sharad Pawar",
+      "B": "Rajiv Shukla",
+      "C": "N. Srinivasan",
+      "D": "Lalit Modi"
+    },
+    "correctOption": "D",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q055",
+    "text": "Who was the most expensive player at the first IPL auction in 2008, bought for US$1.5 million?",
+    "options": {
+      "A": "Ishant Sharma",
+      "B": "Irfan Pathan",
+      "C": "MS Dhoni",
+      "D": "Andrew Symonds"
+    },
+    "correctOption": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q056",
+    "text": "Which company became the IPL title sponsor from the 2022 season?",
+    "options": {
+      "A": "Vivo",
+      "B": "Pepsi",
+      "C": "Tata Group",
+      "D": "Dream11"
+    },
+    "correctOption": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q057",
+    "text": "In which season was the Impact Player rule introduced in the IPL?",
+    "options": {
+      "A": "2021",
+      "B": "2024",
+      "C": "2023",
+      "D": "2022"
+    },
+    "correctOption": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q058",
+    "text": "What is the maximum number of overseas players allowed in a team's playing XI in the IPL?",
+    "options": {
+      "A": "6",
+      "B": "3",
+      "C": "5",
+      "D": "4"
+    },
+    "correctOption": "D",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q059",
+    "text": "Delhi Daredevils were renamed Delhi Capitals ahead of which season?",
+    "options": {
+      "A": "2019",
+      "B": "2018",
+      "C": "2017",
+      "D": "2021"
+    },
+    "correctOption": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q060",
+    "text": "In which year did Kings XI Punjab rebrand as Punjab Kings?",
+    "options": {
+      "A": "2020",
+      "B": "2022",
+      "C": "2021",
+      "D": "2019"
+    },
+    "correctOption": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q061",
+    "text": "Which franchise bought Mitchell Starc for Rs 24.75 crore at the IPL 2024 auction?",
+    "options": {
+      "A": "Sunrisers Hyderabad",
+      "B": "Kolkata Knight Riders",
+      "C": "Mumbai Indians",
+      "D": "Chennai Super Kings"
+    },
+    "correctOption": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q062",
+    "text": "Which franchise bought Rishabh Pant for a then-record Rs 27 crore at the IPL 2025 mega auction?",
+    "options": {
+      "A": "Punjab Kings",
+      "B": "Lucknow Super Giants",
+      "C": "Royal Challengers Bengaluru",
+      "D": "Delhi Capitals"
+    },
+    "correctOption": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q063",
+    "text": "In which city was the IPL 2025 mega auction held?",
+    "options": {
+      "A": "Mumbai",
+      "B": "Jeddah",
+      "C": "Bengaluru",
+      "D": "Dubai"
+    },
+    "correctOption": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q064",
+    "text": "Who has been the long-time head coach of Chennai Super Kings?",
+    "options": {
+      "A": "Stephen Fleming",
+      "B": "Ricky Ponting",
+      "C": "Mahela Jayawardene",
+      "D": "Tom Moody"
+    },
+    "correctOption": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q065",
+    "text": "Which former Australian captain was Punjab Kings' head coach in IPL 2025?",
+    "options": {
+      "A": "Trevor Bayliss",
+      "B": "Justin Langer",
+      "C": "Ricky Ponting",
+      "D": "Tom Moody"
+    },
+    "correctOption": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q066",
+    "text": "Who was Kolkata Knight Riders' mentor during their IPL 2024 title-winning season?",
+    "options": {
+      "A": "Brendon McCullum",
+      "B": "Gautam Gambhir",
+      "C": "Chandrakant Pandit",
+      "D": "Dwayne Bravo"
+    },
+    "correctOption": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q067",
+    "text": "Who scored an unbeaten 158 in the very first IPL match in 2008?",
+    "options": {
+      "A": "Brendon McCullum",
+      "B": "Sourav Ganguly",
+      "C": "Ricky Ponting",
+      "D": "Virender Sehwag"
+    },
+    "correctOption": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q068",
+    "text": "Rinku Singh hit five consecutive sixes in the final over of a 2023 IPL match against which team?",
+    "options": {
+      "A": "Lucknow Super Giants",
+      "B": "Punjab Kings",
+      "C": "Gujarat Titans",
+      "D": "Rajasthan Royals"
+    },
+    "correctOption": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q069",
+    "text": "Who took the first hat-trick in IPL history, for Chennai Super Kings in 2008?",
+    "options": {
+      "A": "Harbhajan Singh",
+      "B": "Muttiah Muralitharan",
+      "C": "Lakshmipathy Balaji",
+      "D": "Makhaya Ntini"
+    },
+    "correctOption": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q070",
+    "text": "Who won the Orange Cap in IPL 2010 while playing for Mumbai Indians?",
+    "options": {
+      "A": "Suresh Raina",
+      "B": "Sachin Tendulkar",
+      "C": "Rohit Sharma",
+      "D": "Jacques Kallis"
+    },
+    "correctOption": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "Q071",
+    "text": "Chris Gayle's record unbeaten 175 in 2013 came against which team?",
+    "options": {
+      "A": "Delhi Daredevils",
+      "B": "Pune Warriors India",
+      "C": "Mumbai Indians",
+      "D": "Kings XI Punjab"
+    },
+    "correctOption": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q072",
+    "text": "Yashasvi Jaiswal hit the fastest IPL fifty, off 13 balls, in 2023 against which team?",
+    "options": {
+      "A": "Mumbai Indians",
+      "B": "Sunrisers Hyderabad",
+      "C": "Kolkata Knight Riders",
+      "D": "Chennai Super Kings"
+    },
+    "correctOption": "C",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q073",
+    "text": "What is the fewest number of balls taken to score an IPL century (record, set in 2013)?",
+    "options": {
+      "A": "28",
+      "B": "30",
+      "C": "33",
+      "D": "38"
+    },
+    "correctOption": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q074",
+    "text": "Which team chased down 262 against Kolkata Knight Riders in 2024, the highest successful chase in IPL history?",
+    "options": {
+      "A": "Punjab Kings",
+      "B": "Rajasthan Royals",
+      "C": "Sunrisers Hyderabad",
+      "D": "Delhi Capitals"
+    },
+    "correctOption": "A",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q075",
+    "text": "Virat Kohli and AB de Villiers shared a record 229-run partnership in 2016 against which team?",
+    "options": {
+      "A": "Sunrisers Hyderabad",
+      "B": "Mumbai Indians",
+      "C": "Kolkata Knight Riders",
+      "D": "Gujarat Lions"
+    },
+    "correctOption": "D",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q076",
+    "text": "Alzarri Joseph recorded the best bowling figures in IPL history, 6/12 in 2019, against which team?",
+    "options": {
+      "A": "Chennai Super Kings",
+      "B": "Kolkata Knight Riders",
+      "C": "Sunrisers Hyderabad",
+      "D": "Delhi Capitals"
+    },
+    "correctOption": "C",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q077",
+    "text": "Which team lost the IPL 2017 final to Mumbai Indians by a single run?",
+    "options": {
+      "A": "Rising Pune Supergiant",
+      "B": "Royal Challengers Bangalore",
+      "C": "Kolkata Knight Riders",
+      "D": "Sunrisers Hyderabad"
+    },
+    "correctOption": "A",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q078",
+    "text": "Who scored a century for Chennai Super Kings in the IPL 2018 final against Sunrisers Hyderabad?",
+    "options": {
+      "A": "Suresh Raina",
+      "B": "Shane Watson",
+      "C": "MS Dhoni",
+      "D": "Faf du Plessis"
+    },
+    "correctOption": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q079",
+    "text": "Which team was bowled out for just 113 in the IPL 2024 final?",
+    "options": {
+      "A": "Sunrisers Hyderabad",
+      "B": "Rajasthan Royals",
+      "C": "Royal Challengers Bengaluru",
+      "D": "Chennai Super Kings"
+    },
+    "correctOption": "A",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q080",
+    "text": "In which city was the IPL 2014 final between Kolkata Knight Riders and Kings XI Punjab played?",
+    "options": {
+      "A": "Kolkata",
+      "B": "Chennai",
+      "C": "Bengaluru",
+      "D": "Mumbai"
+    },
+    "correctOption": "C",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q081",
+    "text": "Who was named Player of the Match in the 2008 IPL final between Rajasthan Royals and Chennai Super Kings?",
+    "options": {
+      "A": "Graeme Smith",
+      "B": "Shane Warne",
+      "C": "Shane Watson",
+      "D": "Yusuf Pathan"
+    },
+    "correctOption": "D",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q082",
+    "text": "Who won the Orange Cap in the inaugural IPL season in 2008, playing for Kings XI Punjab?",
+    "options": {
+      "A": "Shaun Marsh",
+      "B": "Matthew Hayden",
+      "C": "Sanath Jayasuriya",
+      "D": "Gautam Gambhir"
+    },
+    "correctOption": "A",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q083",
+    "text": "Which batter won back-to-back Orange Caps in 2011 and 2012?",
+    "options": {
+      "A": "David Warner",
+      "B": "Michael Hussey",
+      "C": "Virat Kohli",
+      "D": "Chris Gayle"
+    },
+    "correctOption": "D",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q084",
+    "text": "Who won the Orange Cap in IPL 2014 with 660 runs for Kolkata Knight Riders?",
+    "options": {
+      "A": "Manish Pandey",
+      "B": "Suresh Raina",
+      "C": "Robin Uthappa",
+      "D": "Gautam Gambhir"
+    },
+    "correctOption": "C",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q085",
+    "text": "Who won the Orange Cap in IPL 2018 with 735 runs for Sunrisers Hyderabad?",
+    "options": {
+      "A": "Rishabh Pant",
+      "B": "Ambati Rayudu",
+      "C": "Kane Williamson",
+      "D": "KL Rahul"
+    },
+    "correctOption": "C",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q086",
+    "text": "Which batter won the Orange Cap in 2015, 2017 and 2019?",
+    "options": {
+      "A": "Virat Kohli",
+      "B": "Chris Gayle",
+      "C": "KL Rahul",
+      "D": "David Warner"
+    },
+    "correctOption": "D",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q087",
+    "text": "Which bowler won the Purple Cap in both 2013 and 2015?",
+    "options": {
+      "A": "Lasith Malinga",
+      "B": "Harbhajan Singh",
+      "C": "Bhuvneshwar Kumar",
+      "D": "Dwayne Bravo"
+    },
+    "correctOption": "D",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q088",
+    "text": "Which bowler won back-to-back Purple Caps in 2016 and 2017?",
+    "options": {
+      "A": "Rashid Khan",
+      "B": "Bhuvneshwar Kumar",
+      "C": "Jasprit Bumrah",
+      "D": "Yuzvendra Chahal"
+    },
+    "correctOption": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q089",
+    "text": "Which CSK spinner won the Purple Cap in IPL 2019 with 26 wickets?",
+    "options": {
+      "A": "Ravindra Jadeja",
+      "B": "Harbhajan Singh",
+      "C": "Deepak Chahar",
+      "D": "Imran Tahir"
+    },
+    "correctOption": "D",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q090",
+    "text": "Which Australian pacer won the Purple Cap in IPL 2018 for Kings XI Punjab?",
+    "options": {
+      "A": "Pat Cummins",
+      "B": "Andrew Tye",
+      "C": "Josh Hazlewood",
+      "D": "Mitchell Starc"
+    },
+    "correctOption": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q091",
+    "text": "Who won the Purple Cap in IPL 2011 with 28 wickets for Mumbai Indians?",
+    "options": {
+      "A": "Dwayne Bravo",
+      "B": "Amit Mishra",
+      "C": "Shane Warne",
+      "D": "Lasith Malinga"
+    },
+    "correctOption": "D",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q092",
+    "text": "Which Pakistani bowler won the Purple Cap in the inaugural IPL season in 2008?",
+    "options": {
+      "A": "Umar Gul",
+      "B": "Mohammad Asif",
+      "C": "Shahid Afridi",
+      "D": "Sohail Tanvir"
+    },
+    "correctOption": "D",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q093",
+    "text": "Through the 2025 season, how many IPL centuries has Virat Kohli scored?",
+    "options": {
+      "A": "9",
+      "B": "6",
+      "C": "7",
+      "D": "8"
+    },
+    "correctOption": "D",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q094",
+    "text": "Which spinner has taken three hat-tricks in the IPL?",
+    "options": {
+      "A": "Lasith Malinga",
+      "B": "Amit Mishra",
+      "C": "Yuvraj Singh",
+      "D": "Sunil Narine"
+    },
+    "correctOption": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q095",
+    "text": "In which year did Kochi Tuskers Kerala play their only IPL season?",
+    "options": {
+      "A": "2013",
+      "B": "2011",
+      "C": "2012",
+      "D": "2010"
+    },
+    "correctOption": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q096",
+    "text": "Before winning the title in 2025, how many IPL finals had Royal Challengers Bangalore lost?",
+    "options": {
+      "A": "2",
+      "B": "5",
+      "C": "3",
+      "D": "4"
+    },
+    "correctOption": "C",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q097",
+    "text": "In which city was the IPL 2024 player auction held, the first IPL auction outside India?",
+    "options": {
+      "A": "Singapore",
+      "B": "Jeddah",
+      "C": "Abu Dhabi",
+      "D": "Dubai"
+    },
+    "correctOption": "D",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q098",
+    "text": "How many matches were played in the inaugural IPL season of 2008?",
+    "options": {
+      "A": "74",
+      "B": "59",
+      "C": "56",
+      "D": "60"
+    },
+    "correctOption": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q099",
+    "text": "Which player was bought by Delhi Daredevils for Rs 16 crore at the IPL 2015 auction?",
+    "options": {
+      "A": "Yuvraj Singh",
+      "B": "Angelo Mathews",
+      "C": "Dinesh Karthik",
+      "D": "Ashish Nehra"
+    },
+    "correctOption": "A",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "Q100",
+    "text": "Which franchise's 14-year-old Vaibhav Suryavanshi scored a 35-ball century against Gujarat Titans in IPL 2025?",
+    "options": {
+      "A": "Mumbai Indians",
+      "B": "Rajasthan Royals",
+      "C": "Lucknow Super Giants",
+      "D": "Delhi Capitals"
+    },
+    "correctOption": "B",
+    "difficulty": "Hard"
+  }
+]

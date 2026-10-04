@@ -1,0 +1,21 @@
+{
+  "name": "manifest",
+  "short_name": "IPL Quiz",
+  "description": "Multiplayer IPL Auction Quiz — fast, mobile-first",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#001f5c",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Question {
+  id            String         @id
+  text          String
+  optionA       String         @map("option_a")
+  optionB       String         @map("option_b")
+  optionC       String         @map("option_c")
+  optionD       String         @map("option_d")
+  correctOption String         @map("correct_option")
+  difficulty    String
+  isActive      Boolean        @default(true) @map("is_active")
+  quizQuestions QuizQuestion[]
+
+  @@map("questions")
+}
+
+model Quiz {
+  id              String         @id @default(uuid())
+  code            String         @unique
+  title           String?
+  state           String         @default("WAITING")
+  hostTokenHash   String         @map("host_token_hash")
+  questionCount   Int            @default(25) @map("question_count")
+  durationSeconds Int            @default(7200) @map("duration_seconds")
+  createdAt       DateTime       @default(now()) @map("created_at")
+  startedAt       DateTime?      @map("started_at")
+  endsAt          DateTime?      @map("ends_at")
+  endedAt         DateTime?      @map("ended_at")
+  endedReason     String?        @map("ended_reason")
+  quizQuestions   QuizQuestion[]
+  participants    Participant[]
+  results         Result[]
+
+  @@map("quizzes")
+}
+
+model QuizQuestion {
+  quizId     String   @map("quiz_id")
+  position   Int
+  questionId String   @map("question_id")
+  quiz       Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  question   Question @relation(fields: [questionId], references: [id])
+
+  @@id([quizId, position])
+  @@unique([quizId, questionId])
+  @@map("quiz_questions")
+}
+
+model Participant {
+  id               String    @id @default(uuid())
+  quizId           String    @map("quiz_id")
+  displayName      String    @map("display_name")
+  normalizedName   String    @map("normalized_name")
+  tokenHash        String    @map("token_hash")
+  recoveryCodeHash String    @map("recovery_code_hash")
+  status           String    @default("IN_PROGRESS")
+  joinedAt         DateTime  @default(now()) @map("joined_at")
+  submittedAt      DateTime? @map("submitted_at")
+  quiz             Quiz      @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  answers          Answer[]
+  result           Result?
+
+  @@unique([quizId, normalizedName])
+  @@index([quizId, status])
+  @@map("participants")
+}
+
+model Answer {
+  participantId  String      @map("participant_id")
+  position       Int
+  selectedOption String      @map("selected_option")
+  savedAt        DateTime    @default(now()) @map("saved_at")
+  participant    Participant @relation(fields: [participantId], references: [id], onDelete: Cascade)
+
+  @@id([participantId, position])
+  @@map("answers")
+}
+
+model Result {
+  participantId   String      @id @map("participant_id")
+  quizId          String      @map("quiz_id")
+  score           Int         @default(0)
+  correctCount    Int         @default(0) @map("correct_count")
+  incorrectCount  Int         @default(0) @map("incorrect_count")
+  unansweredCount Int         @default(25) @map("unanswered_count")
+  timeTakenMs     BigInt      @default(0) @map("time_taken_ms")
+  rank            Int?
+  isFinal         Boolean     @default(false) @map("is_final")
+  participant     Participant @relation(fields: [participantId], references: [id], onDelete: Cascade)
+  quiz            Quiz        @relation(fields: [quizId], references: [id], onDelete: Cascade)
+
+  @@index([quizId, score(sort: Desc), timeTakenMs(sort: Asc)])
+  @@map("results")
+}
