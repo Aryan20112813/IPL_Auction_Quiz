@@ -26,7 +26,13 @@ export function useAnswerSync(
   const backoffRetryTimerRef = useRef<NodeJS.Timeout | null>(null);
   const backoffDelayRef = useRef<number>(1000);
   const isSyncingRef = useRef<boolean>(false);
+  const syncPromiseRef = useRef<Promise<void> | null>(null);
   const upperCode = roomCode?.toUpperCase();
+
+  // Initialize/merge server fetched answers with local state
+  const initAnswers = useCallback((serverAnswers: Record<number, "A" | "B" | "C" | "D">) => {
+    setAnswers((prev) => ({ ...serverAnswers, ...prev }));
+  }, []);
 
   // Load pending queue from localStorage on mount
   useEffect(() => {
@@ -60,8 +66,21 @@ export function useAnswerSync(
   );
 
   // Sync function that pushes pending queue to server
-  const syncQueue = useCallback(async () => {
-    if (!participantToken || !upperCode || isSyncingRef.current) return;
+  const syncQueue = useCallback(async (): Promise<void> => {
+    if (!participantToken || !upperCode) return;
+
+    if (isSyncingRef.current && syncPromiseRef.current) {
+      await syncPromiseRef.current;
+      let itemsLeft = 0;
+      setPendingQueue((q) => {
+        itemsLeft = q.length;
+        return q;
+      });
+      if (itemsLeft > 0) {
+        return syncQueue();
+      }
+      return;
+    }
 
     // Check if offline
     if (typeof navigator !== "undefined" && !navigator.onLine) {
@@ -132,6 +151,7 @@ export function useAnswerSync(
       }, backoffDelayRef.current);
     } finally {
       isSyncingRef.current = false;
+      syncPromiseRef.current = null;
     }
   }, [participantToken, upperCode]);
 
@@ -197,6 +217,7 @@ export function useAnswerSync(
   return {
     answers,
     setAnswer,
+    initAnswers,
     saveStatus,
     pendingCount: pendingQueue.length,
     flushPending: syncQueue,

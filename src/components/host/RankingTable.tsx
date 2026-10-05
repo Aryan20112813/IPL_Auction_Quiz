@@ -111,23 +111,44 @@ export function RankingTable({
           {/* Mobile Card List */}
           <div className="sm:hidden divide-y divide-navy-800/80">
             {rows.map((row) => (
-              <div key={row.participantId} className="p-4 flex items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-navy-900 border border-navy-700 flex items-center justify-center font-mono font-extrabold text-cricket-gold text-sm shrink-0">
-                    {row.rank ? `#${row.rank}` : "—"}
+              <div key={row.participantId} className="p-3.5 flex flex-col gap-2.5">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="w-8 h-8 rounded-lg bg-navy-900 border border-navy-700 flex items-center justify-center font-mono font-extrabold text-cricket-gold text-xs shrink-0">
+                      {row.rank ? `#${row.rank}` : "—"}
+                    </div>
+                    <div className="flex flex-col min-w-0">
+                      <span className="font-bold text-slate-100 text-sm truncate">{row.name}</span>
+                      <span className="text-[11px] text-slate-400 font-mono">
+                        {row.answered}/{totalQuestions} answered {row.timeTakenMs ? `· ${formatTimeTaken(row.timeTakenMs)}` : ""}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex flex-col">
-                    <span className="font-bold text-slate-100 text-sm">{row.name}</span>
-                    <span className="text-[11px] text-slate-400 flex items-center gap-1">
-                      {row.timeTakenMs ? formatTimeTaken(row.timeTakenMs) : `${row.answered}/${totalQuestions} answered`}
+
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="font-mono text-base font-black text-white">
+                      {row.score !== null ? `${row.score} pts` : "—"}
                     </span>
                   </div>
                 </div>
 
-                <div className="flex flex-col items-end gap-1">
-                  <span className="font-mono text-lg font-black text-white">
-                    {row.score !== null ? `${row.score} pts` : "—"}
-                  </span>
+                <div className="flex items-center justify-between gap-2 pt-1">
+                  <div>
+                    {row.status === "SUBMITTED" ? (
+                      <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-950/60 text-emerald-400 border border-emerald-500/30">
+                        Submitted
+                      </span>
+                    ) : row.status === "AUTO_SUBMITTED" ? (
+                      <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-purple-950/60 text-purple-400 border border-purple-500/30">
+                        Auto-Submitted
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-amber-950/60 text-amber-400 border border-amber-500/30">
+                        Answering...
+                      </span>
+                    )}
+                  </div>
+
                   {onRemove && (
                     <button
                       type="button"

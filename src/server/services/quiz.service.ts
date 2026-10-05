@@ -7,6 +7,8 @@ import { generateToken, hashToken } from "../auth/tokens";
 import { getEffectiveState, isQuizClosed } from "../quiz/state";
 import { computeEndsAt, isExpired } from "../quiz/timer";
 import { finalizeQuiz } from "../quiz/finalize";
+import { scoreAnswers } from "../ranking/score";
+import { computeTimeTakenMs } from "../ranking/time-taken";
 import { assignRanks } from "../ranking/rank";
 import {
   NotFoundError,
@@ -197,6 +199,13 @@ export async function getHostDashboard(
 ) {
   const quiz = await prisma.quiz.findUnique({
     where: { id: quizId },
+    include: {
+      quizQuestions: {
+        include: {
+          question: true,
+        },
+      },
+    },
   });
 
   if (!quiz) {
@@ -228,7 +237,6 @@ export async function getHostDashboard(
     },
   });
 
-
   let mappedRows;
 
   if (isFinal) {
@@ -245,20 +253,44 @@ export async function getHostDashboard(
       joinedAt: p.joinedAt,
     }));
   } else {
-    // Provisional live dashboard: rank only submitted participants
-    const submittedOnly = participants.filter((p) => p.status === "SUBMITTED" && p.result);
-    const unsubmitted = participants.filter((p) => p.status !== "SUBMITTED" || !p.result);
+    // Build answer key map: position -> correctOption
+    const correctMap: Record<number, string> = {};
+    for (const qq of quiz.quizQuestions) {
+      correctMap[qq.position] = qq.question.correctOption;
+    }
 
-    const rankable = submittedOnly.map((p) => ({
-      participantId: p.id,
-      score: p.result?.score || 0,
-      timeTakenMs: p.result?.timeTakenMs ? BigInt(p.result.timeTakenMs) : BigInt(0),
-      joinedAt: p.joinedAt,
-      displayName: p.displayName,
-      status: p.status,
-      answered: p.answers.length,
-      incorrect: p.result?.incorrectCount ?? null,
-    }));
+    // Provisional live dashboard: rank participants who submitted, auto-submitted, or answered all questions
+    const submittedOnly = participants.filter(
+      (p) => p.status === "SUBMITTED" || p.status === "AUTO_SUBMITTED" || p.result || p.answers.length === quiz.questionCount
+    );
+    const unsubmitted = participants.filter(
+      (p) => p.status !== "SUBMITTED" && p.status !== "AUTO_SUBMITTED" && !p.result && p.answers.length !== quiz.questionCount
+    );
+
+    const rankable = submittedOnly.map((p) => {
+      let score = p.result?.score;
+      let incorrectCount = p.result?.incorrectCount;
+      let timeTakenMsBigInt = p.result?.timeTakenMs ? BigInt(p.result.timeTakenMs) : null;
+
+      if (score === undefined || score === null) {
+        const scoring = scoreAnswers(p.answers, correctMap, quiz.questionCount);
+        score = scoring.score;
+        incorrectCount = scoring.incorrectCount;
+        const computedMs = computeTimeTakenMs(p.joinedAt, quiz.startedAt, p.submittedAt || now);
+        timeTakenMsBigInt = BigInt(computedMs);
+      }
+
+      return {
+        participantId: p.id,
+        score: score || 0,
+        timeTakenMs: timeTakenMsBigInt || BigInt(0),
+        joinedAt: p.joinedAt,
+        displayName: p.displayName,
+        status: p.status,
+        answered: p.answers.length,
+        incorrect: incorrectCount ?? null,
+      };
+    });
 
     const provisionalRanked = assignRanks(rankable);
 

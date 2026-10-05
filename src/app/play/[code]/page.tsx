@@ -95,6 +95,13 @@ export default function PlayQuizPage() {
     }
   }, [participantToken, roomCode]);
 
+  // Hook for Answer Auto-saving
+  const { answers, setAnswer, initAnswers, saveStatus, flushPending } = useAnswerSync(
+    roomCode,
+    participantToken,
+    {}
+  );
+
   // 2. Fetch Questions (only when ACTIVE and IN_PROGRESS)
   const fetchQuestions = useCallback(async () => {
     if (!participantToken || !roomCode) return;
@@ -105,6 +112,9 @@ export default function PlayQuizPage() {
       );
       setQuestions(data.questions);
       setEndsAt(data.endsAt);
+      if (data.answers) {
+        initAnswers(data.answers);
+      }
       return data;
     } catch (err: any) {
       if (err.message?.includes("removed") || err.code === "FORBIDDEN") {
@@ -112,7 +122,7 @@ export default function PlayQuizPage() {
       }
       return null;
     }
-  }, [participantToken, roomCode]);
+  }, [participantToken, roomCode, initAnswers]);
 
   // 3. Fetch Leaderboard (when closed and results ready)
   const fetchLeaderboard = useCallback(async () => {
@@ -178,13 +188,6 @@ export default function PlayQuizPage() {
     return () => clearInterval(interval);
   }, [participantToken, roomCode, meData?.status, questions.length, fetchMe, fetchQuestions, fetchLeaderboard]);
 
-  // Hook for Answer Auto-saving
-  const { answers, setAnswer, saveStatus, flushPending } = useAnswerSync(
-    roomCode,
-    participantToken,
-    {}
-  );
-
   // Submit Handler
   const handleSubmit = async () => {
     if (!participantToken) return;
@@ -193,8 +196,15 @@ export default function PlayQuizPage() {
       // Flush any pending unsaved answers before final submit
       await flushPending();
 
+      // Snapshot all current answers
+      const answersPayload = Object.entries(answers).map(([pos, opt]) => ({
+        position: Number(pos),
+        option: opt,
+      }));
+
       await apiFetch<SubmitResponseDto>(`/api/v1/quizzes/${roomCode}/submit`, {
         method: "POST",
+        body: JSON.stringify({ answers: answersPayload }),
         token: participantToken,
       });
 

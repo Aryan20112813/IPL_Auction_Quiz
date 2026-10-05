@@ -47,20 +47,20 @@ export function DashboardCounts({ counts }: DashboardCountsProps) {
   ];
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 w-full">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 w-full">
       {items.map((it) => {
         const Icon = it.icon;
         return (
           <div
             key={it.label}
-            className={`p-4 sm:p-5 rounded-2xl glass-card bg-gradient-to-br ${it.bg} border ${it.border} flex items-center gap-3.5 shadow-lg`}
+            className={`p-3 sm:p-5 rounded-2xl glass-card bg-gradient-to-br ${it.bg} border ${it.border} flex items-center gap-2.5 sm:gap-3.5 shadow-lg`}
           >
-            <div className={`p-2.5 rounded-xl bg-navy-950/60 border border-navy-700/60 ${it.color} shrink-0`}>
-              <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+            <div className={`p-2 sm:p-2.5 rounded-xl bg-navy-950/60 border border-navy-700/60 ${it.color} shrink-0`}>
+              <Icon className="w-4 h-4 sm:w-6 sm:h-6" />
             </div>
-            <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-black text-white">{it.value}</span>
-              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <div className="flex flex-col min-w-0">
+              <span className="text-lg sm:text-2xl font-black text-white">{it.value}</span>
+              <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400 truncate">
                 {it.label}
               </span>
             </div>

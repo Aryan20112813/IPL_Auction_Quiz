@@ -57,17 +57,17 @@ export function QuestionCard({
   }, [disabled, onSelectOption]);
 
   return (
-    <div className="w-full glass-card rounded-3xl p-5 sm:p-8 flex flex-col gap-6 shadow-2xl border border-navy-700/80">
+    <div className="w-full glass-card rounded-3xl p-4 sm:p-8 flex flex-col gap-4 sm:gap-6 shadow-2xl border border-navy-700/80">
       {/* Header */}
-      <div className="flex items-center justify-between pb-3 border-b border-navy-700/60">
-        <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-cricket-orange">
+      <div className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-navy-700/60">
+        <span className="text-[11px] sm:text-sm font-extrabold uppercase tracking-wider text-cricket-orange">
           Question {question.position} of {totalQuestions}
         </span>
         {selectedOption && !disabled && (
           <button
             type="button"
             onClick={() => onSelectOption(null)}
-            className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-red-400 transition"
+            className="flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-slate-400 hover:text-red-400 transition"
           >
             <Trash2 className="w-3.5 h-3.5" />
             <span>Clear selection</span>
@@ -76,7 +76,7 @@ export function QuestionCard({
       </div>
 
       {/* Question Text */}
-      <h2 className="text-lg sm:text-2xl font-bold text-white leading-relaxed">
+      <h2 className="text-base sm:text-2xl font-bold text-white leading-relaxed break-words">
         {question.text}
       </h2>
 

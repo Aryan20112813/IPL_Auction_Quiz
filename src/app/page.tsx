@@ -15,7 +15,7 @@ export default function LandingPage() {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-tight mb-6">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight mb-6">
           Quiz for{" "}
           <span className="bg-gradient-to-r from-cricket-orange via-[#F97316] to-cricket-gold bg-clip-text text-transparent">
             IPL Auction
