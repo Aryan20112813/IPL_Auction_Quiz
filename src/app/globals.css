@@ -3,16 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #060F1D;
-  --bg-card: #0B1F3A;
-  --bg-card-subtle: #132D52;
-  --border-subtle: #1C3E6E;
+  --bg-primary: #050d1a;
+  --bg-card: #0a1a33;
+  --bg-card-subtle: #102240;
+  --border-subtle: #1a3358;
   --orange: #F58220;
   --gold: #F7C948;
   --text-main: #F8FAFC;
   --text-muted: #94A3B8;
 }
 
+/* ── Stadium Background ─────────────────────────────────── */
 body {
   background-color: var(--bg-primary);
   color: var(--text-main);
@@ -24,48 +25,143 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom scrollbars */
+/* ── Scrollbar ──────────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #060F1D;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1C3E6E;
+  background: rgba(245, 130, 32, 0.3);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #27528E;
+  background: rgba(245, 130, 32, 0.5);
 }
 
-/* Glassmorphism helpers */
+/* ── Glassmorphism Cards ────────────────────────────────── */
 .glass-panel {
-  background: rgba(11, 31, 58, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(28, 62, 110, 0.6);
+  background: rgba(10, 26, 51, 0.82);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid rgba(245, 130, 32, 0.12);
 }
 
 .glass-card {
-  background: linear-gradient(135deg, rgba(19, 45, 82, 0.7) 0%, rgba(11, 31, 58, 0.85) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(245, 130, 32, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background: linear-gradient(
+    145deg,
+    rgba(16, 34, 64, 0.75) 0%,
+    rgba(10, 26, 51, 0.88) 100%
+  );
+  backdrop-filter: blur(24px) saturate(1.2);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  border: 1px solid rgba(245, 130, 32, 0.15);
+  box-shadow:
+    0 4px 24px 0 rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
+/* ── IPL Glows ──────────────────────────────────────────── */
 .glow-orange {
-  box-shadow: 0 0 20px rgba(245, 130, 32, 0.35);
+  box-shadow:
+    0 0 24px rgba(245, 130, 32, 0.35),
+    0 0 48px rgba(245, 130, 32, 0.12);
 }
 
 .glow-gold {
-  box-shadow: 0 0 20px rgba(247, 201, 72, 0.4);
+  box-shadow:
+    0 0 20px rgba(247, 201, 72, 0.35),
+    0 0 40px rgba(247, 201, 72, 0.1);
 }
 
-/* Accessibility: visible focus */
+/* ── Decorative IPL Accent Stripe ───────────────────────── */
+.ipl-stripe-top {
+  position: relative;
+}
+.ipl-stripe-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #F58220 20%,
+    #F7C948 50%,
+    #F58220 80%,
+    transparent 100%
+  );
+  z-index: 50;
+}
+
+/* ── Floodlight Shimmer Animation ───────────────────────── */
+@keyframes floodlightShimmer {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.06; }
+}
+
+.floodlight-shimmer::before {
+  content: '';
+  position: fixed;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(245, 130, 32, 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+  animation: floodlightShimmer 8s ease-in-out infinite;
+}
+
+/* ── Pitch Line Decoration ──────────────────────────────── */
+.pitch-line {
+  position: relative;
+}
+.pitch-line::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(245, 130, 32, 0.4),
+    rgba(247, 201, 72, 0.5),
+    rgba(245, 130, 32, 0.4),
+    transparent
+  );
+  margin-top: 1rem;
+}
+
+/* ── Accessibility: visible focus ───────────────────────── */
 *:focus-visible {
   outline: 2px solid #F58220;
   outline-offset: 2px;
+}
+
+/* ── Utility Animations ─────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.25s ease-out forwards;
 }
